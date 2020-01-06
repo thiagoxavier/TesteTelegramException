@@ -19,6 +19,7 @@ namespace Teste3
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            //adicionar o serviço
             services.AddGlobalExceptionHandlerMiddleware(opc =>
             {
                 opc.BotId = "substituir pelo bot id do telegram";
@@ -36,6 +37,8 @@ namespace Teste3
             }
 
             app.UseHttpsRedirection();
+
+            //incluir o middleware
             app.UseGlobalExceptionHandlerMiddleware();
 
             app.UseRouting();
